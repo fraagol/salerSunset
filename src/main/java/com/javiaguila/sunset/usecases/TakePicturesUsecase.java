@@ -11,11 +11,11 @@ public class TakePicturesUsecase {
         this.cameraAdapter = cameraAdapter;
     }
 
-    public void takePictures() {
+    public void takePictures() throws Exception {
 
         for (int i = 0; i < 10; i++) {
             System.out.println("Calling adapter for picture "+i);
-            Picture picture = cameraAdapter.takePicture();
+            Picture picture = cameraAdapter.takePicture("picture"+i+".jpg");
         }
     }
 }
