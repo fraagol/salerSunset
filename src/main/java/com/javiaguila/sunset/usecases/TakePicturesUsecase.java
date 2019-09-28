@@ -3,6 +3,8 @@ package com.javiaguila.sunset.usecases;
 import com.javiaguila.sunset.domain.Picture;
 import com.javiaguila.sunset.usecases.adapters.CameraAdapter;
 
+import java.io.File;
+
 public class TakePicturesUsecase {
 
     private CameraAdapter cameraAdapter;
@@ -11,11 +13,20 @@ public class TakePicturesUsecase {
         this.cameraAdapter = cameraAdapter;
     }
 
-    public void takePictures() {
+    public void takePictures() throws Exception {
 
         for (int i = 0; i < 10; i++) {
-            System.out.println("Calling adapter for picture "+i);
-            Picture picture = cameraAdapter.takePicture();
+            System.out.println("Calling adapter for picture " + i);
+            Picture picture = cameraAdapter.takePicture("picture" + i + ".jpg");
         }
+
+    }
+
+    public void generateGif() {
+
+    }
+
+    private File[] getPicturesFilesForGif() {
+        return null;
     }
 }

@@ -12,7 +12,7 @@ TakePicturesUsecase takePicturesUsecase = new TakePicturesUsecase(new DummyCamer
     }
 
     @Test
-    void takePictures() {
+    void takePictures() throws Exception {
         takePicturesUsecase.takePictures();
     }
 }
